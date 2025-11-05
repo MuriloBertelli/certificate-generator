@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br"><head>
+<meta charset="utf-8">
+<title>{{ evento.titulo }}</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  body { font-family: Arial, Helvetica, sans-serif; color:#111; }
+  .wrap { border:3px solid #111; padding:18mm; border-radius:8px; }
+  h1 { text-align:center; margin:0 0 6mm; }
+  .sub { text-align:center; color:#444; margin-bottom:10mm; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap:6px 24px; }
+  .label{color:#666} .val{font-weight:700}
+  .rodape{font-size:10pt; color:#555; margin-top:12mm}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="sub">{{ evento.liga }} — CNPJ {{ evento.cnpj }} — CR {{ evento.cr_entidade }}</div>
+  <h1>{{ evento.titulo }}</h1>
+  <div class="sub">{{ evento.nome_prova }} • {{ evento.periodo }}</div>
+
+  <p>Certificamos que <span class="val">{{ p.nome }}</span> (CR <span class="val">{{ p.cr_atleta }}</span>)
+     participou da competição realizada por <span class="val">{{ evento.organizador_exibido }}</span>.</p>
+
+  <div class="grid">
+    <div><span class="label">Arma/Modelo:</span> <span class="val">{{ p.arma_modelo }}</span></div>
+    <div><span class="label">Calibre:</span> <span class="val">{{ p.calibre }}</span></div>
+    <div><span class="label">SIGMA/CRAF:</span> <span class="val">{{ p.sigma }}</span></div>
+    <div><span class="label">Mínimo de disparos:</span> <span class="val">{{ p.min_disparos }}</span></div>
+    <div><span class="label">Divisão:</span> <span class="val">{{ p.divisao }}</span></div>
+    <div><span class="label">Categoria:</span> <span class="val">{{ p.categoria }}</span></div>
+    <div><span class="label">Ranking/Posição:</span> <span class="val">{{ p.posicao }}</span></div>
+    <div><span class="label">Identificador (DATA):</span> <span class="val">{{ p.identificador }}</span></div>
+  </div>
+
+  <p class="rodape">{{ evento.endereco }}</p>
+</div>
+</body></html>
