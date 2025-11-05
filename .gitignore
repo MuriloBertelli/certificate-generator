@@ -214,3 +214,5 @@ data/*
 !data/.gitkeep
 certificados/*
 !certificados/.gitkeep
+assets/build_docx/*
+!assets/build_docx/.gitkeep
